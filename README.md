@@ -13,10 +13,9 @@ The build will fail if no certs are present.
     cd logstash-dockerfile && mkdir certs && cd certs
     openssl req -x509 -batch -nodes -newkey rsa:2048 -keyout logstash-forwarder.key -out logstash-forwarder.crt
 
-Build and run
+Build
 
     docker build -t logstash .
-    docker run logstash
 
 Test it:
 
@@ -29,7 +28,7 @@ Test it:
 
 Specify an external Elasticsearch server
 
-    docker run -e ES_HOST=1.2.3.4 -e ES_PORT=9300 logstash
+    docker run -e ES_HOST=1.2.3.4 -e ES_PORT=9300 -d -t logstash
 
 Ports
 
