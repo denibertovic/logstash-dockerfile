@@ -28,7 +28,7 @@ Test it:
 
 Specify an external Elasticsearch server
 
-    docker run -e ES_HOST=1.2.3.4 -e ES_PORT=9300 -d -t logstash
+    docker run -name logstash -e ES_HOST=1.2.3.4 -e ES_PORT=9300 -d -t logstash
 
 Ports
 
