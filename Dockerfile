@@ -25,6 +25,7 @@ RUN chmod +x /usr/local/bin/run.sh
 RUN mkdir /opt/certs/
 ADD certs/logstash-forwarder.crt /opt/certs/logstash-forwarder.crt
 ADD certs/logstash-forwarder.key /opt/certs/logstash-forwarder.key
+ADD collectd-types.db /opt/collectd-types.db
 
 EXPOSE 514
 EXPOSE 5043

@@ -22,11 +22,11 @@ input {
 
     type => "$LUMBERJACK_TAG"
   }
+  collectd {typesdb => ["/opt/collectd-types.db"]}
 }
 output {
   stdout {
       debug => true
-      debug_format => "json"
   }
 
   elasticsearch {
@@ -39,4 +39,4 @@ output {
 EOF
 
 
-java -jar /opt/logstash.jar agent -f /opt/logstash.conf -- web
+exec java -jar /opt/logstash.jar agent -f /opt/logstash.conf -- web
