@@ -1,0 +1,25 @@
+input {
+  syslog {
+    type => syslog
+    port => 514
+  }
+  lumberjack {
+    port => 5043
+
+    ssl_certificate => "/opt/certs/logstash-forwarder.crt"
+    ssl_key => "/opt/certs/logstash-forwarder.key"
+
+    type => "lumberjack"
+  }
+  collectd {typesdb => ["/opt/collectd-types.db"]}
+}
+output {
+  stdout {
+      codec => json
+  }
+
+  elasticsearch {
+      host => "elasticsearch"
+      port => "9300"
+  }
+}
