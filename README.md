@@ -14,11 +14,7 @@ The build will fail if no certs are present.
 
     openssl req -x509 -batch -nodes -newkey rsa:2048 -keyout logstash-forwarder.key -out logstash-forwarder.crt
 
-Build
-
-    docker build -t logstash .
-
-Or pull from the Hub:
+Pull from the Hub:
 
     docker pull denibertovic/logstash
 
@@ -29,7 +25,7 @@ First we need to make sure Elasticsearch is running
 Run logstash:
 
     docker run --name logstash -p 5043:5043 -p 514:514 -v `pwd`/certs:/opt/certs \
-        -v `pwd`/conf-example:/opt/conf --link elasticsearch:elasticsearch -i -t logstash
+        -v `pwd`/conf-example:/opt/conf --link elasticsearch:elasticsearch -i -t denibertovic/logstash
 
 Once the service is running try and send some data to it with netcat:
 
