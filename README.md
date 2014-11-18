@@ -1,16 +1,12 @@
 # Logstash Dockerfile
 
-Logstash 1.3.3 (with Kibana 3)
+Logstash 1.4.2
 
-
-Clone the repo
-
-    git clone https://github.com/denibertovic/logstash-dockerfile
 
 Create OpenSSL certificates for secure communication with logstash-forwarder.
 The build will fail if no certs are present.
 
-    cd logstash-dockerfile && mkdir certs && cd certs
+    mkdir certs && cd certs
 
     openssl req -x509 -batch -nodes -newkey rsa:2048 -keyout logstash-forwarder.key -out logstash-forwarder.crt
 
