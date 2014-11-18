@@ -26,6 +26,7 @@ VOLUME ["/opt/conf", "/opt/certs"]
 
 EXPOSE 514
 EXPOSE 5043
+EXPOSE 9292
 
 CMD /usr/local/bin/start_logstash.sh
 
