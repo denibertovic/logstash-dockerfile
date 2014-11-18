@@ -28,10 +28,8 @@ First we need to make sure Elasticsearch is running
 
 Run logstash:
 
-
-    mkdir conf && mv logstash.conf.example conf/logstash.conf
     docker run --name logstash -p 5043:5043 -p 514:514 -v `pwd`/certs:/opt/certs \
-        -v `pwd`/conf:/opt/conf --link elasticsearch:elasticsearch -i -t logstash
+        -v `pwd`/conf-example:/opt/conf --link elasticsearch:elasticsearch -i -t logstash
 
 Once the service is running try and send some data to it with netcat:
 
