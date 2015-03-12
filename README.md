@@ -2,6 +2,7 @@
 
 Logstash 1.4.2
 
+NOTE: If you want to run the whole ELK stack checkout: https://github.com/denibertovic/elk-stack-docker
 
 Create OpenSSL certificates for secure communication with logstash-forwarder.
 The build will fail if no certs are present.
