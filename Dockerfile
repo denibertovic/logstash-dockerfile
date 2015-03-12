@@ -17,9 +17,11 @@ RUN tar zxvf /tmp/logstash.tar.gz -C /opt && mv /opt/logstash-1.4.2 /opt/logstas
 ADD start_logstash.sh /usr/local/bin/start_logstash.sh
 RUN chmod +x /usr/local/bin/start_logstash.sh
 
+RUN mkdir /opt/logs
+
 ADD collectd-types.db /opt/collectd-types.db
 
-VOLUME ["/opt/conf", "/opt/certs"]
+VOLUME ["/opt/conf", "/opt/certs", "/opt/logs"]
 
 EXPOSE 514
 EXPOSE 5043
